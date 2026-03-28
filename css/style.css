@@ -19,19 +19,22 @@
   display: none;
 }
 
+body.carbon .not td{
+  color: yellow;
+}
+
 .not {
   font-family: "KepatihanPro", monospace;
 }
 
 .not td{
-  color: yellow;
+  color: #38BDF8;
   font-size: 12px;
   text-align: left!important;
   white-space: pre;
 }
 
 .not td.center{
-  color: yellow;
   font-size: 12px;
   text-align: center!important;
 }
