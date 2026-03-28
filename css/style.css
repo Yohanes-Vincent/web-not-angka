@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "KepatihanPro";
+  src: url("../fonts/KepatihanPro.ttf") format("truetype");
+}
+
+.text-center {
+  text-align: center!important;
+}
+
+.text-left {
+  text-align: left!important;
+}
+
+.text-right {
+  text-align: right!important;
+}
+
+.hide {
+  display: none;
+}
+
+.not {
+  font-family: "KepatihanPro", monospace;
+}
+
+.not td{
+  color: yellow;
+  font-size: 12px;
+  text-align: left!important;
+  white-space: pre;
+}
+
+.not td.center{
+  color: yellow;
+  font-size: 12px;
+  text-align: center!important;
+}
+
+.lirik {
+  font-family: "Roboto Mono", monospace;
+}
+
+.lirik td{
+  white-space: pre;
+  font-size: 10px;
+}
+
+.chord td{
+  font-weight: 900;
+  font-size: 10px;
+}
+
+.no-border-table {
+  border-collapse: collapse;
+  table-layout: auto;
+  width: auto;
+}
+
+.no-border-table td {
+  padding: 0 4px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.no-border-table,
+.no-border-table tr,
+.no-border-table td,
+.no-border-table th {
+  border: none !important;
+}
+
+.spacer td {
+  height: 30px;
+}
