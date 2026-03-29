@@ -144,10 +144,7 @@
             console.log("Table width:", tableWidth, "Main width:", mainWidth);
 
             if (tableWidth > mainWidth) {
-                const scale = mainWidth / tableWidth;
-                const roundedScale = Math.min(1, Math.floor(scale * 10) / 10);
-
-                table.style.transform = `scale(${roundedScale})`;
+                table.style.transform = `scale(0.8)`;
                 table.style.transformOrigin = "top left";
             } else {
                 table.style.transform = "scale(1)";
