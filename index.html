@@ -111,11 +111,33 @@
         loadPage('songs/Kumau Cinta Yesus Selamanya.html');
         function loadPage(page) {
             fetch(page)
-            .then(res => res.text())
-            .then(html => {
-            document.getElementById('main-content').innerHTML = html;
-            });
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById('main-content').innerHTML = html;
+                    autoScaleMain();
+                });
         }
+
+        function autoScaleMain() {
+            const main = document.getElementById("mainContent");
+            const deviceWidth = window.innerWidth;
+
+            const contentWidth = main.scrollWidth;
+
+            // hanya scale jika lebih lebar dari layar
+            if (contentWidth > deviceWidth) {
+                const scale = deviceWidth / contentWidth;
+
+                main.style.transform = `scale(${scale})`;
+                main.style.transformOrigin = "top left";
+            } else {
+                main.style.transform = "scale(1)";
+            }
+        }
+
+        // jalankan saat load & resize
+        window.addEventListener("load", autoScaleMain);
+        window.addEventListener("resize", autoScaleMain);
     </script>
 </body>
 
