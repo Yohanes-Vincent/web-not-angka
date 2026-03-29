@@ -128,17 +128,14 @@
             // hanya scale jika lebih lebar dari layar
             if (tableWidth > mainWidth) {
                 const scale = mainWidth / tableWidth;
+                const roundedScale = Math.min(1, Math.floor(scale * 100) / 100);
 
-                document.getElementById("table-not-angka").style.transform = `scale(${scale})`;
+                document.getElementById("table-not-angka").style.transform = `scale(${roundedScale})`;
                 document.getElementById("table-not-angka").style.transformOrigin = "top left";
             } else {
                 document.getElementById("table-not-angka").style.transform = "scale(1)";
             }
         }
-
-        // jalankan saat load & resize
-        window.addEventListener("load", autoScaleMain);
-        window.addEventListener("resize", autoScaleMain);
     </script>
 </body>
 
