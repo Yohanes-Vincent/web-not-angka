@@ -2,7 +2,7 @@
    DayNight Admin - Flat/Minimal Dashboard
    Snow Edition (Light) / Carbon Edition (Dark)
    ======================================== */
-
+   
 /*
 
 TemplateMo 608 DayNight Admin
@@ -86,9 +86,7 @@ button {
     background: none;
 }
 
-input,
-select,
-textarea {
+input, select, textarea {
     font-family: inherit;
     font-size: 0.9375rem;
 }
@@ -103,6 +101,7 @@ textarea {
 .main-content {
     flex: 1;
     padding: 2rem;
+    max-width: 1400px;
     margin: 0 auto;
     width: 100%;
 }
@@ -115,8 +114,6 @@ textarea {
     top: 0;
     z-index: 100;
     transition: var(--transition);
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .nav-container {
@@ -939,8 +936,7 @@ table {
     border-collapse: collapse;
 }
 
-th,
-td {
+th, td {
     padding: 1rem;
     text-align: left;
     border-bottom: 1px solid var(--border-color);
@@ -1284,7 +1280,7 @@ tr:hover td {
     display: flex;
     flex-direction: column;
     height: 100%;
-    overflow: auto;
+	overflow: auto;
 }
 
 .message-view-header {
@@ -1479,12 +1475,12 @@ tr:hover td {
     transition: var(--transition);
 }
 
-.toggle input:checked+.toggle-slider {
+.toggle input:checked + .toggle-slider {
     background: var(--accent);
     border-color: var(--accent);
 }
 
-.toggle input:checked+.toggle-slider:before {
+.toggle input:checked + .toggle-slider:before {
     background: white;
     transform: translateX(20px);
 }
@@ -1607,11 +1603,11 @@ tr:hover td {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
+    
     .two-col {
         grid-template-columns: 1fr;
     }
-
+    
     .kanban-board {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1621,20 +1617,20 @@ tr:hover td {
     .nav-container {
         padding: 0 1rem;
     }
-
+    
     .nav-menu {
         display: none;
     }
-
+    
     .main-content {
         padding: 1.5rem;
     }
-
+    
     .inbox-container {
         grid-template-columns: 1fr;
         height: auto;
     }
-
+    
     .inbox-list {
         border-right: none;
         border-bottom: 1px solid var(--border-color);
@@ -1646,19 +1642,19 @@ tr:hover td {
     .stats-grid {
         grid-template-columns: 1fr;
     }
-
+    
     .kanban-board {
         grid-template-columns: 1fr;
     }
-
+    
     .bar-chart {
         overflow-x: auto;
     }
-
+    
     .date-picker {
         flex-wrap: wrap;
     }
-
+    
     .user-name {
         display: none;
     }

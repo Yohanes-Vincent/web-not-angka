@@ -114,8 +114,6 @@
                 .then(res => res.text())
                 .then(html => {
                     document.getElementById('main-content').innerHTML = html;
-                }).then(() => {
-                    autoScaleMain();
                 });
         }
 
@@ -137,6 +135,8 @@
                 document.getElementById("table-not-angka").style.transform = "scale(1)";
             }
         }
+        window.addEventListener("load", autoScaleMain);
+        window.addEventListener("resize", autoScaleMain);
     </script>
 </body>
 
