@@ -69,8 +69,8 @@ body.carbon .not td {
 .no-border-table tr,
 .no-border-table td,
 .no-border-table th {
-  /* border: none !important; */
-  border : 1px solid red !important;
+  border: none !important;
+  /* border : 1px solid red !important; */
 }
 
 .spacer td {
