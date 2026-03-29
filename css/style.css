@@ -78,7 +78,7 @@ body.carbon .not td {
   height: 30px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .spacer td {
     height: 10px;
   }
