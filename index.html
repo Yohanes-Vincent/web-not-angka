@@ -138,8 +138,10 @@
 
             if (!table || !main) return;
 
-            const tableWidth = table.scrollWidth;
+            const tableWidth = table.offsetWidth;
             const mainWidth = main.clientWidth;
+
+            console.log("Table width:", tableWidth, "Main width:", mainWidth);
 
             if (tableWidth > mainWidth) {
                 const scale = mainWidth / tableWidth;
