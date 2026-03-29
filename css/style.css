@@ -30,13 +30,12 @@ body.carbon .not td {
 
 .not td {
   color: #38BDF8;
-  font-size: 12px;
+  font-size: 15px;
   text-align: left !important;
   white-space: pre;
 }
 
 .not td.center {
-  font-size: 12px;
   text-align: center !important;
 }
 
@@ -46,12 +45,12 @@ body.carbon .not td {
 
 .lirik td {
   white-space: pre;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .chord td {
   font-weight: 900;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .no-border-table {
@@ -90,4 +89,21 @@ body.carbon .not td {
   .greeting-sub {
     font-size: 12px;
   }
+
+  .not td {
+    font-size: 12px;
+  }
+
+  .lirik td {
+    font-size: 10px;
+  }
+
+  .chord td {
+    font-size: 10px;
+  }
+}
+
+.page-header {
+    max-width: 576px;
+    margin: 0 auto;
 }
