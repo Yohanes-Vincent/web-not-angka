@@ -119,21 +119,20 @@
         }
 
         function autoScaleMain() {
+            const table = document.getElementById("table-not-angka");
             const main = document.getElementById("table-not-angka");
-            const deviceWidth = window.innerWidth;
 
-            const contentWidth = main.scrollWidth;
-
-            console.log(deviceWidth, contentWidth);
+            const tableWidth = table ? table.offsetWidth : 0;
+            const mainWidth = main ? main.offsetWidth : 0;
 
             // hanya scale jika lebih lebar dari layar
-            if (contentWidth > deviceWidth) {
-                const scale = deviceWidth / contentWidth;
+            if (tableWidth > mainWidth) {
+                const scale = mainWidth / tableWidth;
 
-                main.style.transform = `scale(${scale})`;
-                main.style.transformOrigin = "top left";
+                document.getElementById("table-not-angka").style.transform = `scale(${scale})`;
+                document.getElementById("table-not-angka").style.transformOrigin = "top left";
             } else {
-                main.style.transform = "scale(1)";
+                document.getElementById("table-not-angka").style.transform = "scale(1)";
             }
         }
 
