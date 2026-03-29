@@ -128,7 +128,7 @@
             // hanya scale jika lebih lebar dari layar
             if (tableWidth > mainWidth) {
                 const scale = mainWidth / tableWidth;
-                const roundedScale = Math.min(1, Math.floor(scale * 100) / 100);
+                const roundedScale = Math.min(1, Math.floor(scale * 10) / 10);
 
                 document.getElementById("table-not-angka").style.transform = `scale(${roundedScale})`;
                 document.getElementById("table-not-angka").style.transformOrigin = "top left";
