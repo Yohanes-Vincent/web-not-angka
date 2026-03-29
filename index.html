@@ -113,30 +113,44 @@
             fetch(page)
                 .then(res => res.text())
                 .then(html => {
-                    document.getElementById('main-content').innerHTML = html;
+                    const main = document.getElementById('main-content');
+                    main.innerHTML = html;
+
+                    // ⬇️ tunggu render selesai
+                    requestAnimationFrame(() => {
+                        autoScaleMain();
+                    });
                 });
         }
+
+        const observer = new MutationObserver(() => {
+            autoScaleMain();
+        });
+
+        observer.observe(document.getElementById("main-content"), {
+            childList: true,
+            subtree: true
+        });
 
         function autoScaleMain() {
             const table = document.getElementById("table-not-angka");
             const main = document.getElementById("main-content");
 
-            const tableWidth = table ? table.offsetWidth : 0;
-            const mainWidth = main ? main.offsetWidth : 0;
+            if (!table || !main) return;
 
-            // hanya scale jika lebih lebar dari layar
+            const tableWidth = table.scrollWidth;
+            const mainWidth = main.clientWidth;
+
             if (tableWidth > mainWidth) {
                 const scale = mainWidth / tableWidth;
                 const roundedScale = Math.min(1, Math.floor(scale * 10) / 10);
 
-                document.getElementById("table-not-angka").style.transform = `scale(${roundedScale})`;
-                document.getElementById("table-not-angka").style.transformOrigin = "top left";
+                table.style.transform = `scale(${roundedScale})`;
+                table.style.transformOrigin = "top left";
             } else {
-                document.getElementById("table-not-angka").style.transform = "scale(1)";
+                table.style.transform = "scale(1)";
             }
         }
-        window.addEventListener("load", autoScaleMain);
-        window.addEventListener("resize", autoScaleMain);
     </script>
 </body>
 
