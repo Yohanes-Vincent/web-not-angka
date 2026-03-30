@@ -167,6 +167,7 @@
 
     <script src="js/templatemo-daynight-script.js"></script>
     <script>
+        const deviceWidth = window.innerWidth;
         loadPage('songs/Kumau Cinta Yesus Selamanya.html');
         function loadPage(page) {
             fetch(page)
@@ -195,12 +196,11 @@
             const table = document.getElementById("table-not-angka");
 
             const tableWidth = table.offsetWidth;
-            const mainWidth = window.innerWidth;
 
             checkConsole("Panjang Tabel Chord", tableWidth);
-            checkConsole("Panjang Main Content", mainWidth);
+            checkConsole("Panjang Main Content", deviceWidth);
 
-            if (tableWidth > mainWidth) {
+            if (tableWidth > deviceWidth) {
                 table.style.transform = `scale(0.76)`;
                 table.style.transformOrigin = "top left";
             } else {
