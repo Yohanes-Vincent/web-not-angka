@@ -12,6 +12,33 @@
 </head>
 
 <body>
+
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-header-left">
+                    <h2>Cek Data</h2>
+                </div>
+                <div class="modal-header-right">
+                    <button id="closeModalBtn" class="modal-close">
+                        X
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+
+                <table id="checker" border="2">
+                    <tr>
+                        <td>Nama</td>
+                        <td>Hasil</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay"></div>
 
@@ -39,6 +66,20 @@
                 </svg>
                 Dashboard
             </a>
+
+            <button id="openModalBtn1" class="modal-button nav-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <!-- bentuk kertas -->
+                    <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+
+                    <!-- lipatan pojok -->
+                    <polyline points="14,2 14,7 19,7" />
+
+                    <!-- garis isi dokumen -->
+                    <line x1="8" y1="13" x2="16" y2="13" />
+                    <line x1="8" y1="17" x2="16" y2="17" />
+                </svg> Cek Data
+            </button>
         </nav>
     </div>
 
@@ -54,13 +95,31 @@
                         VChord
                     </a>
                     <div class="nav-menu">
-                        <div class="nav-item"><a href="index.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none"
+                        <div class="nav-item">
+                            <a href="index.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2">
                                     <rect x="3" y="3" width="7" height="7" rx="1" />
                                     <rect x="14" y="3" width="7" height="7" rx="1" />
                                     <rect x="3" y="14" width="7" height="7" rx="1" />
                                     <rect x="14" y="14" width="7" height="7" rx="1" />
-                                </svg>Dashboard</a></div>
+                                </svg>Dashboard</a>
+                        </div>
+                        <div class="nav-item">
+                            <button id="openModalBtn" class="modal-button nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <!-- bentuk kertas -->
+                                    <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+
+                                    <!-- lipatan pojok -->
+                                    <polyline points="14,2 14,7 19,7" />
+
+                                    <!-- garis isi dokumen -->
+                                    <line x1="8" y1="13" x2="16" y2="13" />
+                                    <line x1="8" y1="17" x2="16" y2="17" />
+                                </svg>
+                                Cek Data
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="nav-right">
@@ -141,7 +200,8 @@
             const tableWidth = table.offsetWidth;
             const mainWidth = main.clientWidth;
 
-            console.log("Table width:", tableWidth, "Main width:", mainWidth);
+            checkConsole("Panjang Tabel Chord", tableWidth);
+            checkConsole("Panjang Main Content", mainWidth);
 
             if (tableWidth > mainWidth) {
                 table.style.transform = `scale(0.76)`;
@@ -149,6 +209,49 @@
             } else {
                 table.style.transform = "scale(1)";
             }
+        }
+
+        const body = document.body;
+        const openBtn = document.getElementById("openModalBtn");
+        const openBtn1 = document.getElementById("openModalBtn1");
+        const closeBtn = document.getElementById("closeModalBtn");
+        const overlay = document.getElementById("modalOverlay");
+
+        openBtn1.onclick = () => {
+            overlay.classList.add("show");
+        };
+        openBtn.onclick = () => {
+            overlay.classList.add("show");
+        };
+
+        closeBtn.onclick = () => {
+            overlay.classList.remove("show");
+        };
+
+        // klik di luar modal untuk menutup
+        overlay.onclick = (e) => {
+            if (e.target === overlay) {
+                overlay.classList.remove("show");
+            }
+        };
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                const overlay = document.getElementById("modalOverlay");
+
+                if (overlay.classList.contains("show")) {
+                    overlay.classList.remove("show");
+                }
+            }
+        });
+
+        function checkConsole(nama, hasil){
+            const table = document.getElementById("checker");
+            const row = table.insertRow();
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            cell1.textContent = nama;
+            cell2.textContent = hasil;
         }
     </script>
 </body>
