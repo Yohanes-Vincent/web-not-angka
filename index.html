@@ -193,12 +193,9 @@
 
         function autoScaleMain() {
             const table = document.getElementById("table-not-angka");
-            const main = window.innerWidth;
-
-            if (!table || !main) return;
 
             const tableWidth = table.offsetWidth;
-            const mainWidth = main.clientWidth;
+            const mainWidth = window.innerWidth;
 
             checkConsole("Panjang Tabel Chord", tableWidth);
             checkConsole("Panjang Main Content", mainWidth);
